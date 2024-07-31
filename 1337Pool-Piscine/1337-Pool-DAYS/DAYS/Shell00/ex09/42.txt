@@ -1,0 +1,20 @@
+Create the Magic File:
+Open a text editor and create a new file named ft_magic.
+Define the Magic Pattern:
+According to the man magic documentation, you need to specify the offset, type, test, and message.
+For your requirement, the offset is 42, the type is string, the test is 42,
+and the message can be something like “42 file type”.
+Here’s what the content of your ft_magic file should look like:
+
+42  string  42  42 file type
+
+Compile the Magic File:
+Use the file command to compile your magic file:
+file -C -m ft_magic
+
+Use the Magic File:
+Now, you can use your custom magic file to detect files of the 42 file type:
+file -m ft_magic <filename>
+
+This setup will allow the file command to recognize files that have the string “42”
+at the 42nd byte as “42 file type”.
